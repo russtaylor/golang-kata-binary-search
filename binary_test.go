@@ -21,3 +21,29 @@ func TestBinarySearchReturnsNegativeOneIfTargetNotFound(t *testing.T) {
 	// Assert
 	assert.Equal(t, expected, actual)
 }
+
+func TestBinarySearchReturns0IfOnlyElementInArrayMatches(t *testing.T) {
+	// Arrange
+	inputArray := []int{3}
+	searchTarget := 3
+	expected := 0
+
+	// Act
+	actual := BinarySearch(searchTarget, inputArray)
+
+	// Assert
+	assert.Equal(t, expected, actual)
+}
+
+func TestBinarySearchReturnsMiddleIndexIfMiddleMatches(t *testing.T) {
+	// Arrange
+	inputArray := []int{1, 3, 5}
+	searchTarget := 3
+	expected := 1
+
+	// Act
+	actual := BinarySearch(searchTarget, inputArray)
+
+	// Assert
+	assert.Equal(t, expected, actual)
+}
